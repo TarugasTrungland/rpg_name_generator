@@ -1,6 +1,8 @@
 import 'dart:math';
 
-class Ork {
+import 'package:rpgnamegenerator/src/character.dart';
+
+class Ork implements Character {
   final vowels = ['a', 'o', 'u', 'oo', 'ou', 'au'];
   final consonants = [
     'p',
@@ -23,8 +25,18 @@ class Ork {
   ];
 
   Random rnd = new Random();
-  String getOrkName() {
-    return getSegment(consonants) + getSegment(vowels) + getSegment(consonants);
+  String getName({bool isMale = true}) {
+    var name = '';
+    if (isMale) {
+      name += 'o';
+    } else {
+      name = 'u';
+    }
+
+    return name +
+        getSegment(consonants) +
+        getSegment(vowels) +
+        getSegment(consonants);
   }
 
   String getSegment(List list) {

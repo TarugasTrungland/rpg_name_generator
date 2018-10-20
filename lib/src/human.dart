@@ -1,11 +1,13 @@
 import 'dart:math';
 
-class Human {
+import 'package:rpgnamegenerator/src/character.dart';
+
+class Human implements Character {
   bool isMale;
   Human({this.isMale = true});
 
-  ///the first half is the ending of all male names,
-  ///the last half is the ending of female names
+  ///the first half of the vowels are the ending of all male names,
+  ///the last half are the ending of female names
   final vowels = [
     'o',
     'o',
@@ -46,20 +48,36 @@ class Human {
   ];
 
   Random rnd = new Random();
-  String getHumanName() {
-    return getSegment(consonants) +
-        getSegment(vowels) +
-        getSegment(consonants) +
-        getSegment(consonants) +
-        getSegment(vowels) +
-        getSegment(consonants);
+  String getName() {
+    int pos = rnd.nextInt(10);
+    String output = '';
+    output += getSegment(consonants);
+    output += getSegment(vowels);
+    if (pos > 9) output += getSegment(consonants);
+    if (pos > 7) output += getSegment(consonants);
+    if (pos > 3) output += getSegment(vowels);
+    if (pos > 8) output += getSegment(consonants);
+    output += getSegment(consonants);
+    if (isMale) {
+      output += getSegment(vowels, length: (vowels.length ~/ 2));
+    } else {
+      output += getSegment(
+        vowels,
+        beforeLenght: (vowels.length ~/ 2),
+        length: (vowels.length ~/ 2),
+      );
+    }
+    return output;
   }
 
-  String getSegment(List list) {
-    Random random = new Random();
+  String getSegment(List list, {int beforeLenght = 0, int length}) {
     String output;
-    var listLength = list.length;
-    output = list[random.nextInt(listLength)];
+    var listLength;
+    if (length == null) {
+      listLength = list.length;
+    } else
+      listLength = length;
+    output = list[beforeLenght + rnd.nextInt(listLength)];
     return output;
   }
 }

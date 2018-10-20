@@ -1,6 +1,8 @@
 import 'dart:math';
 
-class Elf {
+import 'package:rpgnamegenerator/src/character.dart';
+
+class Elf implements Character {
   final elf_glyphs = [
     'a',
     'an',
@@ -41,16 +43,35 @@ class Elf {
     'wen'
   ];
 
-  String getElfName() {
+  final endElfFemaleNames = <String>[
+    'el',
+    'en'
+        'al',
+    'an',
+  ];
+  final endElfMaleNames = <String>[
+    'or',
+    'ond'
+        'cen',
+    'go',
+  ];
+
+  @override
+  String getName({bool isMale = true}) {
     Random random = new Random();
     String elfName = '';
 
-    int len = (random.nextInt(2) + 2);
+    int len = (random.nextInt(2) + 1);
     for (int i = 0; i < len; i++) {
       int r = random.nextInt(elf_glyphs.length);
       elfName += elf_glyphs[r];
-    }
 
-    return elfName;
+      if (isMale) {
+        elfName += endElfMaleNames[random.nextInt(endElfMaleNames.length)];
+      } else {
+        elfName += endElfFemaleNames[random.nextInt(endElfFemaleNames.length)];
+      }
+      return elfName;
+    }
   }
 }
