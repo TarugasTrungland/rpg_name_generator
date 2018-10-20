@@ -1,2 +1,2 @@
 # rpg-name-generator
-name generator for fantastic characters.
+dart name generator for fantastic characters.
