@@ -5,11 +5,16 @@ import 'human.dart';
 class RpgNameGenerator {
   RpgNameGenerator() {}
 
-  static getName(String raceName) {
-    switch (raceName.toLowerCase()) {
+  static getName({String race, String genre}) {
+    switch (race.toLowerCase()) {
       case 'human':
-        Human human = new Human();
-        return human.getHumanName();
+        if (genre == 'male') {
+          Human human = new Human();
+          return human.getHumanName();
+        } else {
+          Human human = new Human(isMale: false);
+          return human.getHumanName();
+        }
         break;
 
       case 'ork':

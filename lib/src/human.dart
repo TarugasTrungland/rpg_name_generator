@@ -1,20 +1,26 @@
 import 'dart:math';
 
 class Human {
+  bool isMale;
+  Human({this.isMale = true});
+
+  ///the first half is the ending of all male names,
+  ///the last half is the ending of female names
   final vowels = [
-    'a',
     'o',
-    'u',
-    'e',
-    'i',
-    'a',
     'o',
-    'u',
-    'e',
-    'i',
     'eo',
+    'oe',
+    'e',
+    'e',
+    'u',
+    'u',
+    'a',
+    'a',
+    'i',
+    'i',
     'ae',
-    'au'
+    'au',
   ];
   final consonants = [
     'w',
