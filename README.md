@@ -8,4 +8,4 @@ Races available so far with male and female names:
 
 Humans,
 Elfs,
-Orks,
+Orcs,
