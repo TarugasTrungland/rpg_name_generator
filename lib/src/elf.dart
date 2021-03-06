@@ -45,14 +45,14 @@ class Elf implements Character {
 
   final endElfFemaleNames = <String>[
     'el',
-    'en'
-        'al',
+    'en',
+    'al',
     'an',
   ];
   final endElfMaleNames = <String>[
     'or',
-    'ond'
-        'cen',
+    'ond',
+    'cen',
     'go',
   ];
 

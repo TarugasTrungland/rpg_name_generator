@@ -1,6 +1,6 @@
 import 'elf.dart';
-import 'ork.dart';
 import 'human.dart';
+import 'ork.dart';
 
 class RpgNameGenerator {
   RpgNameGenerator() {}
@@ -41,6 +41,9 @@ class RpgNameGenerator {
           return elf.getName(isMale: false);
         }
         break;
+
+      default:
+        return 'Pepe';
     }
   }
 }
