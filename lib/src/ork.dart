@@ -24,7 +24,7 @@ class Ork implements Character {
     'rk',
   ];
 
-  Random rnd = new Random();
+  Random rnd = Random();
   String getName({bool isMale = true}) {
     var name = '';
     if (isMale) {
@@ -40,7 +40,7 @@ class Ork implements Character {
   }
 
   String getSegment(List list) {
-    Random random = new Random();
+    Random random = Random();
     String output;
     var listLength = list.length;
     output = list[random.nextInt(listLength)];

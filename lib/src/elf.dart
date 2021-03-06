@@ -58,7 +58,7 @@ class Elf implements Character {
 
   @override
   String getName({bool isMale = true}) {
-    Random random = new Random();
+    Random random = Random();
     String elfName = '';
 
     int len = (random.nextInt(2) + 1);

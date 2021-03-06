@@ -13,10 +13,10 @@ class RpgNameGenerator {
     switch (race.toLowerCase()) {
       case 'human':
         if (genre == 'male') {
-          Human human = new Human();
+          Human human = Human();
           return human.getName();
         } else {
-          Human human = new Human(isMale: false);
+          Human human = Human(isMale: false);
           return human.getName();
         }
         break;
@@ -24,10 +24,10 @@ class RpgNameGenerator {
       case 'ork':
       case 'orc':
         if (genre == 'male') {
-          Ork _ork = new Ork();
+          Ork _ork = Ork();
           return _ork.getName();
         } else {
-          Ork _ork = new Ork();
+          Ork _ork = Ork();
           return _ork.getName(isMale: false);
         }
         break;

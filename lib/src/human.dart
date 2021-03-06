@@ -47,7 +47,7 @@ class Human implements Character {
     'm'
   ];
 
-  Random rnd = new Random();
+  Random rnd = Random();
   String getName() {
     int pos = rnd.nextInt(10);
     String output = '';
