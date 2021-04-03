@@ -70,7 +70,7 @@ class Human implements Character {
     return output;
   }
 
-  String getSegment(List list, {int beforeLenght = 0, int length}) {
+  String getSegment(List list, {int beforeLenght = 0, int? length}) {
     String output;
     var listLength;
     if (length == null) {

@@ -71,7 +71,7 @@ class Elf implements Character {
       } else {
         elfName += endElfFemaleNames[random.nextInt(endElfFemaleNames.length)];
       }
-      return elfName;
     }
+    return elfName;
   }
 }
